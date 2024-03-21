@@ -1,24 +1,29 @@
+# Defining Imports
 import pygame
 import sys
 import tkinter as tk
 from tkinter import StringVar
 from PIL import Image, ImageTk
-
 from button import Button
 
+# initializing pygame
 pygame.init()
 
+# Setting variables about screen information
 screen_info = pygame.display.Info()
 WIDTH = screen_info.current_w
 HEIGHT = screen_info.current_h
 FPS = 244
-picture = pygame.image.load("assets/Background.png")
-BG = pygame.transform.scale(picture, (WIDTH, HEIGHT))
-painting = []
-
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 pygame.display.set_caption("Vibrant Ventures")
 timer = pygame.time.Clock()
+
+# importing background image and assigning to it the BG variable
+picture = pygame.image.load("assets/Background.png")
+BG = pygame.transform.scale(picture, (WIDTH, HEIGHT))
+
+# Defining the variable that will hold information about the current brush and colour during character design
+painting = []
 
 # Defining and assigning variables to track what the current question is and count the correct answers.
 index = 0
